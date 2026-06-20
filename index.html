@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Aasha AI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Splash Screen -->
+    <div class="splash-screen page active">
+        <img src="logo.png" alt="Aasha AI Logo" class="logo splash-logo">
+        <h1>Listen, Heal and Grow!</h1>
+    </div>
+ 
+    <!-- Welcome/Login/Signup -->
+    <div class="welcome-screen page">
+        <h2>Welcome to Aasha AI!</h2>
+        <div class="button-group">
+            <button onclick="navigate('login')">Login</button>
+            <div class="or-line"><span>or</span></div>
+            <button onclick="navigate('signup')">Sign Up</button>
+        </div>
+    </div>
+
+    <!-- Login -->
+    <div class="login-screen page">
+        <h2>Login</h2>
+        <input type="text" placeholder="Email or Username">
+        <div class="password-container">
+            <input type="password" placeholder="Password" id="loginPass">
+            <span class="eye" onclick="togglePassword('loginPass', this)">👁</span>
+        </div>
+        <button onclick="navigate('onboarding1')">Continue</button>
+    </div>
+
+    <!-- Signup -->
+    <div class="signup-screen page">
+        <h2>Sign Up</h2>
+        <input type="text" placeholder="Name">
+        <input type="email" placeholder="Email">
+        <div class="password-container">
+            <input type="password" placeholder="Password" id="signPass">
+            <span class="eye" onclick="togglePassword('signPass', this)">👁</span>
+        </div>
+        <div class="password-container">
+            <input type="password" placeholder="Confirm Password" id="confirmPass">
+            <span class="eye" onclick="togglePassword('confirmPass', this)">👁</span>
+        </div>
+        <button onclick="navigate('onboarding1')">Continue</button>
+    </div>
+
+    <!-- Onboarding -->
+    <div class="onboarding1-screen page">
+        <h2>Tell us about yourself</h2>
+        <input type="text" placeholder="Explain your current mood...">
+        <button onclick="navigate('onboarding2')">Next</button>
+    </div>
+    <div class="onboarding2-screen page">
+        <p>Do you often feel low?</p>
+        <button onclick="navigate('onboarding3')">Yes</button>
+        <button onclick="navigate('onboarding3')">No</button>
+    </div>
+    <div class="onboarding3-screen page">
+        <p>Do you find it hard to concentrate?</p>
+        <button onclick="navigate('onboarding4')">Yes</button>
+        <button onclick="navigate('onboarding4')">No</button>
+    </div>
+    <div class="onboarding4-screen page">
+        <p>Have you lost interest in hobbies?</p>
+        <button onclick="navigate('chat')">Yes</button>
+        <button onclick="navigate('chat')">No</button>
+    </div>
+
+    <!-- Chat -->
+    <div class="chat-screen page">
+        <div class="chat-header">
+            <span class="menu-btn" onclick="toggleMenu()">☰</span>
+            <img src="finallogo.png" class="chat-logo" alt="Logo">
+        </div>
+<div class="dropdown-menu" id="dropdownMenu">
+    <div onclick="navigate('profile')">Your Profile</div>
+    <div onclick="navigate('courses')">Courses</div>
+    <div class="theme-option">
+        <div onclick="toggleThemeDropdown()">Chat Theme ▸</div>
+        <div class="theme-dropdown" id="themeDropdown">
+            <div onclick="changeTheme('light')">Light</div>
+            <div onclick="changeTheme('blue')">Blue</div>
+            <div onclick="changeTheme('purple')">Purple</div>
+        </div>
+    </div>
+</div>
+
+        <div class="chat-area" id="chatArea">
+            <div class="message aasha">Hi, Kya kar rhe ho? Kaisa rha aaj ka din?</div>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="userInput" placeholder="Type something" onfocus="clearPlaceholder(this)">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <!-- Profile -->
+    <div class="profile-screen page">
+        <h2>Your Profile</h2>
+        <input type="text" placeholder="Enter Name">
+        <input type="email" placeholder="Enter Email">
+        <button onclick="navigate('chat')">Back</button>
+        <button onclick="alert('Profile Saved!')">Save</button>
+    </div>
+
+    <!-- Courses -->
+    <div class="courses-screen page">
+        <h2>Courses</h2>
+        <div onclick="navigate('comingsoon')"><h3>Women Manipulation</h3></div>
+        <div onclick="navigate('comingsoon')"><h3>Personality Development</h3></div>
+        <button onclick="navigate('chat')">Back</button>
+    </div>
+
+    <!-- Coming Soon Page -->
+    <div class="comingsoon-screen page">
+        <h2>Coming Soon...</h2>
+        <button onclick="navigate('courses')">Back to Courses</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

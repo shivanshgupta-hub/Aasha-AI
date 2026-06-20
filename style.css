@@ -1,0 +1,206 @@
+body {
+    background-color: var(--bg, #f9f1fb);
+    color: var(--text, #000);
+    transition: 0.3s;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.page {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+.page.active {
+    display: flex;
+}
+
+.logo {
+    width: 100px;
+}
+
+h1, h2, h3, p {
+    margin: 15px 0;
+}
+
+input {
+    padding: 10px;
+    margin: 10px 0;
+    width: 80%;
+    max-width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 10px;
+    background: var(--primary, #6c63ff);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.or-line {
+    position: relative;
+    margin: 10px 0;
+}
+.or-line span {
+    background: #f9f1fb;
+    padding: 0 10px;
+}
+.or-line::before, .or-line::after {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 1px;
+    background: #ccc;
+    top: 50%;
+}
+.or-line::before { left: -110px; }
+.or-line::after { right: -110px; }
+
+.password-container {
+    position: relative;
+    width: 80%;
+    max-width: 300px;
+}
+.password-container input {
+    width: 100%;
+}
+.eye {
+    position: absolute;
+    right: 10px;
+    top: 12px;
+    cursor: pointer;
+}
+
+.chat-header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px;
+}
+
+.chat-logo {
+    width: 40px;
+    height: 40px;
+}
+
+.menu-btn {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    display: none;
+    flex-direction: column;
+    background: #eee;
+    padding: 10px;
+    position: absolute;
+    top: 60px;
+    left: 10px;
+    z-index: 10;
+    border-radius: 5px;
+}
+.dropdown-menu div {
+    margin: 5px 0;
+    cursor: pointer;
+}
+.dropdown-menu.active {
+    display: flex;
+}
+
+.chat-area {
+    flex: 1;
+    width: 100%;
+    padding: 10px;
+    overflow-y: auto;
+}
+.message {
+    margin: 5px;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 60%;
+}
+.message.aasha {
+    background: #f0f0f0;
+    align-self: flex-start;
+}
+.message.user {
+    background: #d1e7dd;
+    align-self: flex-end;
+}
+
+.chat-input {
+    display: flex;
+    width: 100%;
+    padding: 10px;
+}
+.chat-input input {
+    flex: 1;
+    margin-right: 10px;
+}
+
+/* Themes */
+:root {
+    --bg: #f9f1fb;
+    --text: #000;
+    --primary: #6c63ff;
+}
+body.theme-dark {
+    --bg: #121212;
+    --text: #f0f0f0;
+    --primary: #333;
+}
+body.theme-blue {
+    --bg: #e0f7fa;
+    --text: #004d40;
+    --primary: #00acc1;
+}
+body.theme-purple {
+    --bg: #f3e5f5;
+    --text: #4a148c;
+    --primary: #9c27b0;
+}
+
+.theme-option {
+    position: relative;
+}
+
+.theme-dropdown {
+    display: none;
+    flex-direction: column;
+    background: #ddd;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    padding: 5px;
+    border-radius: 5px;
+    z-index: 11;
+}
+
+.theme-dropdown div {
+    margin: 5px 0;
+    cursor: pointer;
+}
+
+.theme-option:hover .theme-dropdown {
+    display: flex;
+}
